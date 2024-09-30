@@ -45,7 +45,7 @@ A web application that helps developers analyze the contents of a React project,
     ```
 
 3. Set up environment variables:
-    Create a `.env.local` file and add the necessary API keys for OpenAI, GitHub OAuth, and Supabase (if applicable).
+    Create a `.env.local` file and add the necessary API keys for OpenAI and GitHub OAuth.
     ```env
     NEXT_PUBLIC_OPENAI_API=your-openai-api
     NEXT_PUBLIC_GITHUB_TOKEN=your-github-token
