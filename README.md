@@ -1,36 +1,76 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# QuickFlow
 
-## Getting Started
+A web application that helps developers analyze the contents of a React project, determine incomplete components, and generate a list of tasks with detailed descriptions and estimated time for completion. The app uses the GitHub API (via Octokit) and OpenAI to offer AI-powered insights and an optimal task workflow.
 
-First, run the development server:
+## Features
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- **GitHub Repository Input**: Users input a GitHub repository URL containing a React project.
+- **Code Analysis**: The app uses Octokit to fetch files from the repo and passes them to the OpenAI API to analyze React components.
+- **Task Generation**: If a component appears incomplete, the AI generates tasks that include:
+  - Task ID
+  - Task Name
+  - Description
+  - Estimated completion time (in hours)
+- **Optimized Workflow**: Tasks are displayed to the user in an optimized sequence for better efficiency.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Tech Stack
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- **Frontend**: React (Next.js)
+- **APIs**: 
+  - [Octokit](https://github.com/octokit/octokit.js) for GitHub API integration
+  - [OpenAI API](https://beta.openai.com/docs/) for AI-powered analysis
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## How It Works
 
-## Learn More
+1. **Input Repository**: The user inputs a GitHub repo URL.
+2. **Fetch & Analyze**: The app fetches all the files in the repository using Octokit and sends them to OpenAI for analysis.
+3. **Task Generation**: If the AI detects incomplete React components, it generates tasks for each component with the following details:
+   - Task ID
+   - Task Name
+   - Description
+   - Estimated time to complete (in hours)
+4. **View Tasks**: The user is redirected to a task page where tasks are listed in an optimal workflow, making it easy to prioritize work.
 
-To learn more about Next.js, take a look at the following resources:
+## Installation
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+1. Clone this repository:
+    ```bash
+    git clone https://github.com/yourusername/repo-name.git
+    cd repo-name
+    ```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+2. Install dependencies:
+    ```bash
+    npm install
+    ```
 
-## Deploy on Vercel
+3. Set up environment variables:
+    Create a `.env.local` file and add the necessary API keys for OpenAI, GitHub OAuth, and Supabase (if applicable).
+    ```env
+    NEXT_PUBLIC_OPENAI_API=your-openai-api
+    NEXT_PUBLIC_GITHUB_TOKEN=your-github-token
+    ```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+4. Start the development server:
+    ```bash
+    npm run dev
+    ```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+5. Open your browser and navigate to `http://localhost:3000`.
+
+## Usage
+
+1. **Input GitHub Repository**: Enter the URL of a GitHub repository containing a React project.
+2. **Analyze Files**: The app will analyze the files and generate a list of tasks for incomplete components.
+3. **View Tasks**: View tasks in the optimized workflow.
+
+## Team Members
+
+Aditya Kulkarni : https://github.com/Ad1tya-007
+Jung-Hyun Andrew Kim : https://github.com/JH-A-Kim
+
+## Conclusion
+
+This was a crazy project from the both of us. We made this in 7 hours during SFU Fallhacks'24!
+
+
